@@ -80,3 +80,8 @@ Catatan:
 
 - Untuk client non-browser, cookie harus dikirim manual
 - Pastikan `withCredentials: true` untuk SPA
+
+## Entity Documentation
+
+Dokumentasi ini menjelaskan struktur entity (database level) yang digunakan dalam sistem.
+Field internal (`id`) **tidak diekspos ke client**, sedangkan `secure_id` digunakan untuk komunikasi API.
