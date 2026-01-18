@@ -32,6 +32,8 @@ Semua dokumentasi yang berhubungan dengan API akan ada di folder docs/api
 }
 ```
 
+- Semua pagination di api ini dimulai dari halaman 1
+
 - default response error json:
 
 ```json
@@ -50,6 +52,7 @@ Semua dokumentasi yang berhubungan dengan API akan ada di folder docs/api
 
 - type error umum:
   - `VALIDATION_ERROR` — Data input tidak valid.
+  - `BUSINESS_RULE_VIOLATION` — Pelanggaran aturan bisnis (mis. quota tidak cukup).
   - `AUTHENTICATION_ERROR` — Gagal autentikasi (mis. token tidak valid atau kadaluarsa).
   - `AUTHORIZATION_ERROR` — Akses ditolak (mis. user tidak punya izin).
   - `INTERNAL_ERROR` — Error server internal.

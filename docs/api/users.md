@@ -131,7 +131,13 @@ curl -X GET "{base_url}/users?current_page=1&limit=10&name=John&roles=ADMIN&role
         "created_at": "2024-01-01T12:00:000Z",
         "updated_at": "2024-01-10T12:00:000Z"
       }
-    ]
+    ],
+    "pagination": {
+      "total_items": 100,
+      "total_pages": 10,
+      "current_page": 1,
+      "limit": 10
+    }
   }
 }
 ```
@@ -158,7 +164,7 @@ curl -X GET "{base_url}/users?current_page=1&limit=10&name=John&roles=ADMIN&role
 ## **GET `/users/{secure_id}`** : Super Admin Mendapatkan detail user berdasarkan secure_id.
 
 - **Allowed Permissions**: `ALL`, `GET_USER_DETAIL`
-  role dengan permission GET_USER_DETAIL tidak bisa mengakses detail superadmin, data super admin hanya bisa dilihat oleh permission ALL.
+  role dengan permission GET_USER_DETAIL tidak bisa mengakses detail super admin, data super admin hanya bisa dilihat oleh permission ALL.
 
 ### **Request**
 
