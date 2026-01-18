@@ -112,6 +112,7 @@ curl -X POST {base_url}/quota-requests \
 - **Query Parameters**:
   - `status` (array of string, optional) — `PENDING`, `APPROVED`, `REJECTED`, `CANCELED`
   - `user_secure_id` (string, optional, allowed permission only)
+  - `user_email` (string, optional, allowed permission only)
   - `current_page` (integer, optional, min: 1)
   - `limit` (integer, optional, min: 1, default: 10)
   - `created_start` (date iso string `YYYY-MM-DD`, optional)
@@ -141,8 +142,10 @@ curl -X GET "{base_url}/quota-requests?status=PENDING&current_page=1&limit=10" \
         "requested_amount": 10,
         "status": "PENDING",
         "created_at": "2024-01-01T12:00:00Z",
-        "user_secure_id": "uuid",
-        "user_email": "user@email.com" // diambil dari table users
+        "user": {
+          "secure_id": "uuid",
+          "email": "user@email.com" // diambil dari table users
+        }
       }
     ],
     "pagination": {
@@ -179,8 +182,10 @@ curl -X GET "{base_url}/quota-requests?status=PENDING&current_page=1&limit=10" \
       "reviewed_by": "admin-secure-id",
       "reviewed_at": "2024-01-02T10:00:00Z",
       "created_at": "2024-01-01T12:00:00Z",
-      "user_secure_id": "uuid",
-      "user_email": "user@example.com"
+      "user": {
+        "secure_id": "uuid",
+        "email": "user@example.com"
+      }
     }
   }
 }
