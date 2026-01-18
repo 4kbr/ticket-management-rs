@@ -8,6 +8,14 @@ Dokumentasi untuk endpoint permintaan quota pada base URL `{base_url}/quota-requ
   - `Admin` melakukan approval / rejection
   - Sistem menjaga konsistensi quota & audit
 
+## Business rules khusus
+
+| Kondisi            | Cek                     |
+| ------------------ | ----------------------- |
+| Bisa request quota | `REQUEST_QUOTA`         |
+| Bisa approve       | `APPROVE_QUOTA_REQUEST` |
+| Skip quota         | `ALL`                   |
+
 ## **POST `/quota-requests`** : Membuat quota request
 
 Digunakan oleh:
@@ -30,7 +38,7 @@ Digunakan oleh:
 {
   "user_secure_id": "uuid", // required hanya untuk permission `APPROVE_QUOTA_REQUEST`, untuk `REQUEST_QUOTA` ini tidak boleh ada
   "requested_amount": 10, // required, integer > 0
-  "reason": "Butuh quota tambahan" // optional, alasan request
+  "reason": "Butuh quota tambahan" // optional, alasan request, min: 3, max: 100
 }
 ```
 

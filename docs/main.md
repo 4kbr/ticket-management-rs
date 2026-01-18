@@ -88,3 +88,7 @@ Catatan:
 
 Dokumentasi ini menjelaskan struktur entity (database level) yang digunakan dalam sistem.
 Field internal (`id`) **tidak diekspos ke client**, sedangkan `secure_id` digunakan untuk komunikasi API.
+
+## Business Logic Emum
+
+Semua validasi akses, quota, dan special behavior → BERDASARKAN PERMISSION, bukan role.
